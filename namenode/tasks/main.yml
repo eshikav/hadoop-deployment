@@ -1,0 +1,20 @@
+- name: Configuring the core-site.xml
+  template: 
+    src: core-site.xml 
+    dest: "{{ hadoop_home }}/hadoop-2.9.1/etc/hadoop/core-site.xml"
+
+- name: Configuring the hdfs-site.xml
+  template: 
+    src: hdfs-site.xml 
+    dest: "{{ hadoop_home }}/hadoop-2.9.1/etc/hadoop/hdfs-site.xml"
+
+- name: Configuring the slaves
+  template: 
+    src: slaves 
+    dest: "{{ hadoop_home }}/hadoop-2.9.1/etc/hadoop/slaves"
+
+
+- name: Formating the namenode 
+  shell: ./hdfs namenode -format
+  args:
+    chdir: $HADOOP_HOME/bin

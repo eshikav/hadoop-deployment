@@ -1,0 +1,13 @@
+- name: Configuring the yum repositories
+  yum: 
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    - libselinux-python
+    - epel-release
+
+- name: Installing the java for the hadoop
+  yum: 
+    name: java-devel 
+    state: installed
+

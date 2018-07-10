@@ -1,0 +1,16 @@
+- hosts: master,slaves
+  tasks:
+    - lineinfile: 
+        line: "{{ hostvars[item]['ansible_default_ipv4']['address'] }} {{ item }}"
+        path: /etc/hosts
+      with_items:
+        - "{{ groups['master'] }}"
+        - "{{ groups['slaves'] }}"
+
+- hosts: master     
+  roles:
+    - {role: namenode, tags: [master]}
+
+- hosts: slaves
+  roles:
+    - { role: datanode, tags: [slave'] }

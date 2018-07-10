@@ -1,0 +1,2 @@
+hadoop_home: "{{ ansible_env.HOME }}"
+hadoop_tar_link: "http://www-eu.apache.org/dist/hadoop/common/stable/hadoop-2.9.1.tar.gz"

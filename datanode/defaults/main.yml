@@ -1,0 +1,2 @@
+namenode_dir: /var/hadoop/namenode/
+datanode_dir: /var/hadoop/datanode/

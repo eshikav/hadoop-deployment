@@ -1,0 +1,5 @@
+- name: Configuring the core-site.xml
+  template: src=core-site.xml dest={{ hadoop_home }}/hadoop-2.9.1/etc/hadoop/core-site.xml
+
+- name: Configuring the hdfs-site.xml
+  template: src=hdfs-site.xml dest={{ hadoop_home }}/hadoop-2.9.1/etc/hadoop/hdfs-site.xml

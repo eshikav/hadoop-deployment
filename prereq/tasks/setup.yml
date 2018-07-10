@@ -1,0 +1,13 @@
+- name: Setting up hostname as per the hadoop standards
+  hostname: name="{{ inventory_hostname }}"
+
+- name: Downloading the hadoop tar ball for the setup
+  get_url:
+    url: "{{ hadoop_tar_link }}"
+    dest: "{{ ansible_env.HOME }}"
+
+- name: Unpacking the tar bundle
+  unarchive:
+    src: "{{ ansible_env.HOME }}/hadoop-2.9.1.tar.gz"
+    dest: "{{ hadoop_home }}"
+

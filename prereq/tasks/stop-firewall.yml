@@ -1,0 +1,5 @@
+- name: Disableing the firewall
+  service: 
+    name: firewalld 
+    status: stopped
+    enabled: no

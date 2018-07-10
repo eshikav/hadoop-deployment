@@ -1,0 +1,5 @@
+[master]
+namenode hostname=namenode
+[slaves]
+datanode1 hostname=datanode1
+datanode2 hostname=datanode2
